@@ -1,0 +1,154 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { ArrowDown, ExternalLink, Github } from "lucide-react";
+import CategoryNav from "@/components/category-nav";
+import PortfolioCard from "@/components/portfolio-card";
+import { portfolioItems } from "@/lib/portfolio-data";
+
+export default function Home() {
+  const searchParams = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
+  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
+    backend: null,
+    mobile: null,
+    frontend: null,
+    nocode: null,
+    api: null,
+  });
+
+  // Handle URL parameters for highlighting specific cards
+  useEffect(() => {
+    const idParam = searchParams.get("id");
+    if (idParam) {
+      // Support multiple IDs separated by commas
+      const ids = idParam.split(",");
+      setHighlightedIds(ids);
+
+      // If there's at least one ID, set the active category to the first highlighted item's category
+      if (ids.length > 0) {
+        const firstItem = portfolioItems.find((item) => item.id === ids[0]);
+        if (firstItem) {
+          setActiveCategory(firstItem.category);
+
+          // Use a ref to track if we've already scrolled to avoid infinite loops
+          const timer = setTimeout(() => {
+            if (sectionRefs.current[firstItem.category]) {
+              sectionRefs.current[firstItem.category]?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          }, 500);
+
+          return () => clearTimeout(timer);
+        }
+      }
+    }
+  }, [searchParams]); // Only depend on searchParams
+
+  const scrollToCategory = (category: string) => {
+    // Don't update state here, just scroll
+    if (sectionRefs.current[category]) {
+      sectionRefs.current[category]?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    // Use setTimeout to ensure the state update completes before scrolling
+    setTimeout(() => {
+      scrollToCategory(category);
+    }, 0);
+  };
+
+  // Group portfolio items by category
+  const itemsByCategory = portfolioItems.reduce((acc, item) => {
+    if (!acc[item.category]) {
+      acc[item.category] = [];
+    }
+    acc[item.category].push(item);
+    return acc;
+  }, {} as Record<string, typeof portfolioItems>);
+
+  // Get unique categories
+  const categories = Object.keys(itemsByCategory);
+
+  return (
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center sticky top-0 bg-gray-50 z-50 text-center px-4">
+        <div className="max-w-4xl mx-auto py-5 ">
+          {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            My Portfolio Showcase
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-12">
+            Explore my work across different development categories
+          </p> */}
+          <CategoryNav
+            activeCategory={activeCategory}
+            onCategoryChange={handleCategoryChange}
+          />
+        </div>
+        {/* <div className="absolute bottom-10 animate-bounce">
+          <ArrowDown size={32} className="text-gray-400" />
+        </div> */}
+      </section>
+
+      {/* Portfolio Sections - One for each category */}
+      {categories.map((category) => (
+        <section
+          key={category}
+          ref={(el) => {
+            sectionRefs.current[category] = el as HTMLDivElement | null;
+          }}
+          className="py-16 px-4 bg-white border-b border-gray-100 last:border-0"
+          id={`section-${category}`}
+        >
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center capitalize">
+              {category} Projects
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {itemsByCategory[category].map((item) => (
+                <PortfolioCard
+                  key={item.id}
+                  item={item}
+                  isHighlighted={highlightedIds.includes(item.id)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-6 md:mb-0">
+            <h3 className="text-xl font-bold">My Portfolio</h3>
+            <p className="text-gray-400 mt-2">
+              Showcasing my development journey
+            </p>
+          </div>
+          <div className="flex space-x-6">
+            <a
+              href="https://github.com"
+              className="hover:text-gray-300 transition-colors"
+            >
+              <Github size={24} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              className="hover:text-gray-300 transition-colors"
+            >
+              <ExternalLink size={24} />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}

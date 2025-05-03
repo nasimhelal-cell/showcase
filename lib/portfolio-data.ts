@@ -1,0 +1,183 @@
+export interface PortfolioItem {
+  id: string
+  title: string
+  description: string
+  category: string
+  image: string
+  technologies: string[]
+  demoUrl?: string
+  githubUrl?: string
+  completionDate?: string
+  longDescription?: string
+  features?: string[]
+  process?: string
+}
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: "backend-1",
+    title: "E-commerce Backend",
+    description: "A scalable backend system for e-commerce platforms with inventory management.",
+    category: "backend",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Node.js", "Express", "MongoDB", "Redis"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "June 2023",
+    longDescription:
+      "This e-commerce backend system was designed to handle high traffic and provide a seamless shopping experience. It includes features like real-time inventory management, order processing, and payment integration.",
+    features: [
+      "Real-time inventory tracking",
+      "Secure payment processing",
+      "Order management system",
+      "User authentication and authorization",
+    ],
+  },
+  {
+    id: "backend-2",
+    title: "Real-time Chat Server",
+    description: "Backend infrastructure for real-time messaging with WebSockets.",
+    category: "backend",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    githubUrl: "https://github.com/example/project",
+    completionDate: "August 2023",
+    features: [
+      "Real-time message delivery",
+      "User presence detection",
+      "Message history storage",
+      "End-to-end encryption",
+    ],
+  },
+  {
+    id: "mobile-1",
+    title: "Fitness Tracker App",
+    description: "Mobile application for tracking workouts and nutrition with progress analytics.",
+    category: "mobile",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["React Native", "Redux", "Firebase"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "March 2023",
+    features: [
+      "Workout tracking and planning",
+      "Nutrition logging and analysis",
+      "Progress visualization",
+      "Social sharing capabilities",
+    ],
+  },
+  {
+    id: "mobile-2",
+    title: "Travel Companion",
+    description: "A travel app with offline maps, itinerary planning, and local recommendations.",
+    category: "mobile",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Flutter", "Dart", "Google Maps API"],
+    demoUrl: "https://example.com/demo",
+    completionDate: "October 2023",
+    features: [
+      "Offline map functionality",
+      "Itinerary planning and management",
+      "Local recommendations engine",
+      "Travel journal and photo storage",
+    ],
+  },
+  {
+    id: "frontend-1",
+    title: "Dashboard UI",
+    description: "Modern analytics dashboard with interactive charts and data visualization.",
+    category: "frontend",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["React", "D3.js", "Tailwind CSS"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "January 2023",
+    features: [
+      "Interactive data visualizations",
+      "Real-time data updates",
+      "Customizable dashboard layouts",
+      "Export and reporting capabilities",
+    ],
+  },
+  {
+    id: "frontend-2",
+    title: "E-learning Platform",
+    description: "Interactive learning platform with course management and progress tracking.",
+    category: "frontend",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Vue.js", "Vuex", "SCSS"],
+    demoUrl: "https://example.com/demo",
+    completionDate: "May 2023",
+    features: [
+      "Course content management",
+      "Progress tracking and analytics",
+      "Interactive quizzes and assessments",
+      "Certificate generation",
+    ],
+  },
+  {
+    id: "nocode-1",
+    title: "Client Portal",
+    description: "No-code solution for client management and document sharing.",
+    category: "nocode",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Webflow", "Airtable", "Zapier"],
+    demoUrl: "https://example.com/demo",
+    completionDate: "February 2023",
+    features: [
+      "Client onboarding workflow",
+      "Document sharing and management",
+      "Automated notifications",
+      "Client feedback collection",
+    ],
+  },
+  {
+    id: "nocode-2",
+    title: "Membership Site",
+    description: "Subscription-based content platform built without coding.",
+    category: "nocode",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Bubble", "Stripe", "Memberstack"],
+    demoUrl: "https://example.com/demo",
+    completionDate: "July 2023",
+    features: [
+      "Subscription management",
+      "Content access control",
+      "Member directory and profiles",
+      "Integrated payment processing",
+    ],
+  },
+  {
+    id: "api-1",
+    title: "Payment Gateway API",
+    description: "Secure payment processing API with multiple provider integrations.",
+    category: "api",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Node.js", "Express", "Stripe API", "PayPal API"],
+    githubUrl: "https://github.com/example/project",
+    completionDate: "April 2023",
+    features: [
+      "Multi-provider payment processing",
+      "Webhook integration",
+      "Transaction reporting",
+      "Fraud detection mechanisms",
+    ],
+  },
+  {
+    id: "api-2",
+    title: "Weather Data API",
+    description: "RESTful API for retrieving and analyzing weather data from multiple sources.",
+    category: "api",
+    image: "/placeholder.svg?height=400&width=600",
+    technologies: ["Python", "FastAPI", "Redis", "Docker"],
+    demoUrl: "https://example.com/demo",
+    githubUrl: "https://github.com/example/project",
+    completionDate: "September 2023",
+    features: [
+      "Multi-source data aggregation",
+      "Historical weather data analysis",
+      "Forecast prediction algorithms",
+      "Geolocation-based queries",
+    ],
+  },
+]
