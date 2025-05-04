@@ -6,6 +6,7 @@ import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import CategoryNav from "@/components/category-nav";
 import PortfolioCard from "@/components/portfolio-card";
 import { portfolioItems } from "@/lib/portfolio-data";
+import Image from "next/image";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -78,8 +79,11 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="flex flex-col items-center sticky top-0 bg-gray-50 z-50 text-center px-4">
-        <div className="max-w-4xl mx-auto py-5 ">
+      <section className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-16">
+        <div>
+          <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
+        </div>
+        <div className="max-w-4xl  py-5 ">
           {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
             My Portfolio Showcase
           </h1>

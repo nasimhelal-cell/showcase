@@ -51,10 +51,10 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: "mobile-1",
-    title: "Fitness Tracker App",
-    description: "Mobile application for tracking workouts and nutrition with progress analytics.",
+    title: "Food Ordering App",
+    description: "Mobile application for ordering food with tracking workouts and nutrition with progress analytics.",
     category: "mobile",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/mobile/food-1.png",
     technologies: ["React Native", "Redux", "Firebase"],
     demoUrl: "https://example.com/demo",
     githubUrl: "https://github.com/example/project",
