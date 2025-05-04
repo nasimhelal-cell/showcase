@@ -81,7 +81,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-16">
         <div>
-          <Image src="/wwt_logo.png" alt="Logo" width={200} height={200} />
+          <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
         </div>
         <div className="max-w-4xl  py-5 ">
           {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
