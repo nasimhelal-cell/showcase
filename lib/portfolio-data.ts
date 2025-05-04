@@ -293,3 +293,28 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
 ]
+
+
+export const sectionInfo = {
+  "backend": {
+    "title": "Backend Projects",
+    "description": "Explore my backend projects with a focus on scalability and performance."
+  },
+  "mobile": {
+    "title": "Mobile Projects",
+    "description": "Discover my mobile app projects with a range of features and capabilities."
+  },
+  "frontend": {
+    "title": "Frontend Projects",
+    "description": "Check out my frontend projects with a focus on user experience and design."
+  },
+  "nocode": {
+    "title": "No-code Projects",
+    "description": "Explore my no-code projects with a range of features and capabilities."
+  },
+  "api": {
+    "title": "API Projects",
+    "description": "Discover my API projects with a focus on scalability and performance."
+  }
+
+}

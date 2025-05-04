@@ -7,6 +7,9 @@ import CategoryNav from "@/components/category-nav";
 import PortfolioCard from "@/components/portfolio-card";
 import { portfolioItems } from "@/lib/portfolio-data";
 import Image from "next/image";
+import { sectionInfo } from "@/lib/portfolio-data";
+
+type SectionKey = keyof typeof sectionInfo;
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -79,7 +82,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
+      <header className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
         <div>
           <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
         </div>
@@ -98,7 +101,7 @@ export default function Home() {
         {/* <div className="absolute bottom-10 animate-bounce">
           <ArrowDown size={32} className="text-gray-400" />
         </div> */}
-      </section>
+      </header>
 
       {/* Portfolio Sections - One for each category */}
       {categories.map((category) => (
@@ -107,14 +110,18 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current[category] = el as HTMLDivElement | null;
           }}
-          className="py-[100px] px-4 bg-white border-b border-gray-100 last:border-0"
+          className="py-[70px] px-4 bg-white border-b-4 border-gray-200 last:border-0"
           id={`section-${category}`}
         >
           <div className="px-16">
-            <h2 className="text-3xl font-bold mb-12 text-center capitalize">
-              {category} Projects
-            </h2>
-
+            <div className="flex flex-col items-center gap-1">
+              <h2 className="text-3xl font-bold text-center capitalize pt-[20px]">
+              {sectionInfo[category as SectionKey]?.title || `${category} Projects`}
+              </h2>
+              <p className="text-base text-gray-600 mb-12">
+              {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {itemsByCategory[category].map((item) => (
                 <PortfolioCard
