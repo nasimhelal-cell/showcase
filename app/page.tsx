@@ -79,7 +79,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-16">
+      <section className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
         <div>
           <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
         </div>
@@ -107,15 +107,15 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current[category] = el as HTMLDivElement | null;
           }}
-          className="py-16 px-4 bg-white border-b border-gray-100 last:border-0"
+          className="py-[100px] px-4 bg-white border-b border-gray-100 last:border-0"
           id={`section-${category}`}
         >
-          <div className="max-w-7xl mx-auto">
+          <div className="px-16">
             <h2 className="text-3xl font-bold mb-12 text-center capitalize">
               {category} Projects
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {itemsByCategory[category].map((item) => (
                 <PortfolioCard
                   key={item.id}
