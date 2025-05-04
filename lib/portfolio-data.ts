@@ -179,6 +179,22 @@ export const portfolioItems: PortfolioItem[] = [
     ],
   },
   {
+    id: "mobile-9",
+    title: "Portfolio Builder App",
+    description: "portfolio builder app with portfolio features and analytics.",
+    category: "mobile",
+    image: "/mobile/app-9.png",
+    technologies: ["Flutter", "Dart", "Google Maps API"],
+    demoUrl: "https://example.com/demo",
+    completionDate: "October 2023",
+    features: [
+      "Offline map functionality",
+      "Itinerary planning and management",
+      "Local recommendations engine",
+      "Travel journal and photo storage",
+    ],
+  },
+  {
     id: "frontend-1",
     title: "Dashboard UI",
     description: "Modern analytics dashboard with interactive charts and data visualization.",
