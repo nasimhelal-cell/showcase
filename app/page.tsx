@@ -114,11 +114,11 @@ export default function Home() {
           id={`section-${category}`}
         >
           <div className="px-16">
-            <div className="flex flex-col items-center gap-1">
-              <h2 className="text-3xl font-bold text-center capitalize pt-[20px]">
+            <div className="flex flex-col items-center gap-1 pb-[70px]">
+              <h2 className="text-5xl font-semibold text-center capitalize">
               {sectionInfo[category as SectionKey]?.title || `${category} Projects`}
               </h2>
-              <p className="text-base text-gray-600 mb-12">
+              <p className="text-base text-gray-300">
               {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
               </p>
             </div>
