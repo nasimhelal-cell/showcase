@@ -107,11 +107,11 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current[category] = el as HTMLDivElement | null;
           }}
-          className="py-[100px] px-4 bg-white border-b border-gray-100 last:border-0"
+          className="py-[70px] px-4 bg-white border-b-4 border-gray-200 last:border-0"
           id={`section-${category}`}
         >
           <div className="px-16">
-            <h2 className="text-3xl font-bold mb-12 text-center capitalize">
+            <h2 className="text-3xl font-bold mb-12 text-center capitalize py-[20px]">
               {category} Projects
             </h2>
 
