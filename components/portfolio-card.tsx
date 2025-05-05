@@ -66,7 +66,7 @@ export default function PortfolioCard({
           "relative z-10 h-full bg-white overflow-hidden rounded-xl"
         )}
       >
-        <div className="relative">
+        <div className="relative group-hover:scale-105 transition-transform duration-500">
           <Image
             src={item.image || "/placeholder.svg"}
             alt={item.title}
@@ -128,6 +128,7 @@ export default function PortfolioCard({
             </a>
           )}
         </div>
+       
       </div>
     </div>
   );

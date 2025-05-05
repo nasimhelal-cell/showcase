@@ -110,7 +110,7 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current[category] = el as HTMLDivElement | null;
           }}
-          className="py-[70px] px-4 bg-white border-b-4 border-gray-200 last:border-0"
+          className="py-[120px] px-4 bg-white border-b-4 border-gray-200 last:border-0"
           id={`section-${category}`}
         >
           <div className="px-16">
@@ -134,6 +134,7 @@ export default function Home() {
           </div>
         </section>
       ))}
+      
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
