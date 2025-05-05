@@ -83,8 +83,9 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <header className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
-        <div>
+        <div className="flex items-center gap-5">
           <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
+          <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
         </div>
         <div className="max-w-4xl  py-5 ">
           {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -118,7 +119,7 @@ export default function Home() {
               <h2 className="text-5xl font-semibold text-center capitalize">
               {sectionInfo[category as SectionKey]?.title || `${category} Projects`}
               </h2>
-              <p className="text-base text-gray-300">
+              <p className="text-2xl text-gray-300">
               {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
               </p>
             </div>
