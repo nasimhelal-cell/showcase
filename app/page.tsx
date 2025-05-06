@@ -136,7 +136,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white py-12 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold">My Portfolio</h3>
+            <h3 className="text-xl font-bold">Our Portfolio</h3>
             <p className="text-gray-400 mt-2">
               Showcasing my development journey
             </p>
