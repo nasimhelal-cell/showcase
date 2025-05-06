@@ -102,7 +102,7 @@ export default function PortfolioCard({
           </div>
         </div>
 
-        <div className="px-6 pb-6 flex justify-between">
+        {/* <div className="px-6 pb-6 flex justify-between">
           {item.demoUrl && (
             <a
               href={item.demoUrl}
@@ -128,7 +128,7 @@ export default function PortfolioCard({
               <span>Source Code</span>
             </a>
           )}
-        </div>
+        </div> */}
        
       </div>
     </div>

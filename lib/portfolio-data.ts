@@ -20,7 +20,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Deshboard",
     description: "Deshboard for manage users and products and analytics.",
     category: "backend-api",
-    highlightKeyword: "Dashboard",
+    highlightKeyword: "Laravel Dashboard",
     image: "/web/web-6.webp",
     technologies: ["Node.js", "Socket.io", "PostgreSQL"],
     demoUrl: "https://example.com/demo",
