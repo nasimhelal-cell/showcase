@@ -55,15 +55,16 @@ export default function PortfolioCard({
       className={cn(
         "group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl bg-white shadow-md p-0",
         {
-          [`outline outline-2 outline-offset-2 ${getCategoryColor(
-            item.category
-          ).replace("bg-", "outline-")}`]: isHighlighted,
+          [`outline outline-2 outline-offset-2 outline-orange-500`]: isHighlighted,
         }
       )}
     >
       <div
         className={cn(
-          "relative z-10 h-full bg-white overflow-hidden rounded-xl"
+          "relative z-10 h-full overflow-hidden rounded-xl",
+          {
+            "outline outline-2 outline-offset-2 bg-orange-500 text-white outline-orange-500": isHighlighted
+          }
         )}
       >
         <div className="relative group-hover:scale-105 transition-transform duration-500">
@@ -80,7 +81,7 @@ export default function PortfolioCard({
               getCategoryColor(item.category)
             )}
           >
-            {item.category}
+            {item.highlightKeyword}
           </span>
         </div>
 
@@ -101,7 +102,7 @@ export default function PortfolioCard({
           </div>
         </div>
 
-        <div className="px-6 pb-6 flex justify-between">
+        {/* <div className="px-6 pb-6 flex justify-between">
           {item.demoUrl && (
             <a
               href={item.demoUrl}
@@ -127,7 +128,7 @@ export default function PortfolioCard({
               <span>Source Code</span>
             </a>
           )}
-        </div>
+        </div> */}
        
       </div>
     </div>

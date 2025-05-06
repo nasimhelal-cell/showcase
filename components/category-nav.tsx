@@ -3,12 +3,10 @@
 import { cn } from "@/lib/utils"
 
 const categories = [
-  { id: "all", label: "All Categories" },
-  { id: "backend", label: "Backend" },
+  { id: "backend-api", label: "Backend & API" },
   { id: "mobile", label: "Mobile App" },
   { id: "frontend", label: "Frontend" },
-  { id: "nocode", label: "No Code" },
-  { id: "api", label: "API Development" },
+  { id: "nocode", label: "No Code Solutions" },
 ]
 
 interface CategoryNavProps {
