@@ -87,7 +87,10 @@ export default function Home() {
           <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
           <p className="text-sm -mb-0.5 font-bold text-gray-900">A California Innovation Company</p>
         </div>
-        <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
+        <div>
+          <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
+          <a href="mailto:support@waywisetech.com" className="text-orange-600 font-bold text-sm mt-2 block">support@waywisetech.com</a>
+        </div>
         <div className="max-w-4xl  py-5 ">
           <CategoryNav
             activeCategory={activeCategory}
@@ -109,16 +112,16 @@ export default function Home() {
           <div className="px-16">
             <div className="flex flex-col items-center gap-1 pb-[70px]">
               <h2 className="text-5xl font-semibold text-center capitalize">
-              {sectionInfo[category as SectionKey]?.title || `${category} Projects`}
+                {sectionInfo[category as SectionKey]?.title || `${category} Projects`}
               </h2>
               <p className="text-2xl text-gray-300">
-              {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
+                {sectionInfo[category as SectionKey]?.description || "Explore my work in this category."}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {itemsByCategory[category].map((item, index) => (
                 <PortfolioCard
-                  key={item.id+index}
+                  key={item.id + index}
                   item={item}
                   isHighlighted={highlightedIds.includes(item.id)}
                 />
@@ -127,7 +130,7 @@ export default function Home() {
           </div>
         </section>
       ))}
-      
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 px-4">
