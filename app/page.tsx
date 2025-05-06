@@ -13,7 +13,7 @@ type SectionKey = keyof typeof sectionInfo;
 
 export default function Home() {
   const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("backend");
   const [highlightedIds, setHighlightedIds] = useState<string[]>([]);
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
     backend: null,
@@ -83,10 +83,11 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <header className="flex items-center justify-between sticky top-0 bg-gray-50 z-50 text-center px-[100px]">
-        <div className="flex items-center gap-5">
+        <div className="flex items-end gap-5">
           <Image src="/wwt_logo.png" alt="Logo" width={250} height={200} />
-          <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
+          <p className="text-sm -mb-0.5 font-bold text-gray-900">A California Innovation Company</p>
         </div>
+        <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
         <div className="max-w-4xl  py-5 ">
           {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
             My Portfolio Showcase
