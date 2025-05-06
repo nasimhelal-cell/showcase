@@ -89,20 +89,11 @@ export default function Home() {
         </div>
         <h2 className="text-3xl text-orange-600 font-bold">Our Dynamic Portfolio</h2>
         <div className="max-w-4xl  py-5 ">
-          {/* <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            My Portfolio Showcase
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12">
-            Explore my work across different development categories
-          </p> */}
           <CategoryNav
             activeCategory={activeCategory}
             onCategoryChange={handleCategoryChange}
           />
         </div>
-        {/* <div className="absolute bottom-10 animate-bounce">
-          <ArrowDown size={32} className="text-gray-400" />
-        </div> */}
       </header>
 
       {/* Portfolio Sections - One for each category */}
@@ -125,9 +116,9 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {itemsByCategory[category].map((item) => (
+              {itemsByCategory[category].map((item, index) => (
                 <PortfolioCard
-                  key={item.id}
+                  key={item.id+index}
                   item={item}
                   isHighlighted={highlightedIds.includes(item.id)}
                 />
